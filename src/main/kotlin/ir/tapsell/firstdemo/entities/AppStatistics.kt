@@ -8,7 +8,7 @@ import javax.persistence.Id
 @Entity
 data class AppStatistics(
                          val reportTime: Date? = null,
-                         val type: Int? = null,
+                         val type: AppType? = null,
                          val videoRequests: Int? = null,
                          val webViewRequests: Int? = null,
                          val videoClicks: Int? = null,
