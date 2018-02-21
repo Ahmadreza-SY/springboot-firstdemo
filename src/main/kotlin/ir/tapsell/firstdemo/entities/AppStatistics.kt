@@ -1,19 +1,19 @@
 package ir.tapsell.firstdemo.entities
 
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 import java.util.*
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
 
-@Entity
+
+@Document(collection = "AppStatistics")
 data class AppStatistics(
-                         val reportTime: Date? = null,
-                         val type: AppType? = null,
-                         val videoRequests: Int? = null,
-                         val webViewRequests: Int? = null,
-                         val videoClicks: Int? = null,
-                         val webviewClicks: Int? = null,
-                         val videoInstalls: Int? = null,
-                         val webviewInstalls: Int? = null,
-                         @Id @GeneratedValue
-                         val id: String? = null)
+        val reportTime: Date? = null,
+        val type: AppType? = AppType.ANDROID,
+        val videoRequests: Int? = null,
+        val webViewRequests: Int? = null,
+        val videoClicks: Int? = null,
+        val webViewClicks: Int? = null,
+        val videoInstalls: Int? = null,
+        val webViewInstalls: Int? = null,
+        @Id
+        val id: String? = null)
