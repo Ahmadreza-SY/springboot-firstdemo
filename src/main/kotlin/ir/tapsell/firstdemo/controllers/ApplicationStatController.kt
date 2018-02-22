@@ -5,6 +5,7 @@ import ir.tapsell.firstdemo.entities.AppStatisticsModel
 import ir.tapsell.firstdemo.entities.AppType
 import ir.tapsell.firstdemo.services.ApplicationStatService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.cache.annotation.Cacheable
 import org.springframework.web.bind.annotation.*
 import java.util.*
 
@@ -24,6 +25,7 @@ class ApplicationStatController {
         appStatService.addAppStats(appStatistics)
     }
 
+    @Cacheable(value = ["appStatModel"], key = "#type")
     @GetMapping("apps/getStats")
     fun getStats(@RequestParam("start") startDate: Long,
                  @RequestParam("end") endDate: Long,
