@@ -8,12 +8,12 @@ import java.util.*
 @Document(collection = "AppStatistics")
 data class AppStatistics(
         val reportTime: Date? = null,
-        val type: AppType? = AppType.ANDROID,
-        val videoRequests: Int? = null,
-        val webViewRequests: Int? = null,
-        val videoClicks: Int? = null,
-        val webViewClicks: Int? = null,
-        val videoInstalls: Int? = null,
-        val webViewInstalls: Int? = null,
+        val type: AppType? = AppType.Android,
+        val videoRequests: Int = 0,
+        val webViewRequests: Int = 0,
+        val videoClicks: Int = 0,
+        val webViewClicks: Int = 0,
+        val videoInstalls: Int = 0,
+        val webViewInstalls: Int = 0,
         @Id
         val id: String? = null)
